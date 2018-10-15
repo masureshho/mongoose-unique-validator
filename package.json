@@ -1,5 +1,5 @@
 {
-  "name": "mongoose-unique-validator",
+  "name": "validate-mongoose-unique",
   "version": "2.0.2",
   "description": "mongoose-unique-validator is a plugin which adds pre-save validation for unique fields within a Mongoose schema.",
   "main": "index.js",
@@ -13,8 +13,8 @@
     "validator"
   ],
   "author": {
-    "name": "Blake Haswell",
-    "email": "haswell00@gmail.com",
+    "name": "Suresh Mainali",
+    "email": "masureshho@gmail.com",
     "url": "http://blakehaswell.com/"
   },
   "contributors": [

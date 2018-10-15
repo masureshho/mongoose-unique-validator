@@ -1,9 +1,9 @@
-mongoose-unique-validator
+validate-mongoose-unique
 =========================
 
-[![Build Status](https://travis-ci.org/blakehaswell/mongoose-unique-validator.svg)](https://travis-ci.org/blakehaswell/mongoose-unique-validator)
+[![Build Status](https://travis-ci.org/blakehaswell/validate-mongoose-unique.svg)](https://travis-ci.org/blakehaswell/validate-mongoose-unique)
 
-mongoose-unique-validator is a plugin which adds pre-save validation for unique fields within a Mongoose schema.
+validate-mongoose-unique is a plugin which adds pre-save validation for unique fields within a Mongoose schema.
 
 This makes error handling much easier, since you will get a Mongoose validation error when you attempt to violate a
 [unique constraint](http://mongoosejs.com/docs/api.html#schematype_SchemaType-unique), rather than an E11000 error
@@ -12,15 +12,15 @@ from MongoDB.
 Usage
 -----
 
-Yarn: `yarn add mongoose-unique-validator`
+Yarn: `yarn add validate-mongoose-unique`
 
-NPM: `npm install --save mongoose-unique-validator`
+NPM: `npm install --save validate-mongoose-unique`
 
 Then, apply the plugin to your schema:
 
 ```js
 var mongoose = require('mongoose');
-var uniqueValidator = require('mongoose-unique-validator');
+var uniqueValidator = require('validate-mongoose-unique');
 
 var mySchema = mongoose.Schema(/* put your schema definition here */);
 mySchema.plugin(uniqueValidator);
@@ -34,7 +34,7 @@ the `uniqueValidator` plugin to your user schema:
 
 ```js
 var mongoose = require('mongoose');
-var uniqueValidator = require('mongoose-unique-validator');
+var uniqueValidator = require('validate-mongoose-unique');
 
 // Define your schema as normal.
 var userSchema = mongoose.Schema({
@@ -101,7 +101,7 @@ Custom Error Types
 You can pass through a custom error type as part of the optional `options` argument:
 
 ```js
-userSchema.plugin(uniqueValidator, { type: 'mongoose-unique-validator' });
+userSchema.plugin(uniqueValidator, { type: 'validate-mongoose-unique' });
 ```
 
 After running the above example the output will be:
@@ -114,7 +114,7 @@ After running the above example the output will be:
         username: {
             message: 'Error, expected `username` to be unique. Value: `JohnSmith`',
             name: 'ValidatorError',
-            kind: 'mongoose-unique-validator',
+            kind: 'validate-mongoose-unique',
             path: 'username',
             value: 'JohnSmith'
         }
